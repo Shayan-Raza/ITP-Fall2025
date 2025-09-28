@@ -23,7 +23,7 @@ int main() {
     if (operation == '+') { 
         if (frac12==frac22) { 
             result1 = frac11 + frac21;
-            cout<<result1<<"/"<<frac12;
+            result2 = frac12;
         } else { 
             temp = frac12;
             frac11 = frac11 * frac22;
@@ -33,13 +33,11 @@ int main() {
 
             result1 = frac11 + frac21;
             result2 = frac12;
-
-            cout<<result1<<"/"<<result2;
         }
     } else if(operation == '-') { 
         if (frac12==frac22) { 
             result1 = frac11 - frac21;
-            cout<<result1<<"/"<<frac12;
+            result2 = frac12;
         } else { 
             temp = frac12;
             frac11 = frac11 * frac22;
@@ -49,14 +47,10 @@ int main() {
 
             result1 = frac11 - frac21;
             result2 = frac12;
-
-            cout<<result1<<"/"<<result2;
         }
     } else if(operation == '*') { 
         result1 = frac11 * frac21;
         result2 = frac12 * frac22;
-
-        cout<<result1<<"/"<<result2;
     } else if(operation == '/') { 
         temp = frac21;
         frac21 = frac22;
@@ -65,8 +59,22 @@ int main() {
         result1 = frac11 * frac21;
         result2 = frac12 * frac22;
 
-        cout<<result1<<"/"<<result2;
-
     }
+    int a = abs(result1), b = abs(result2);
+    while (b != 0) {
+        int r = a % b;
+        a = b;
+        b = r;
+    }
+    int gcd = a;
+
+    result1 /= gcd;
+    result2 /= gcd;
+
+    if (result2 < 0) {
+        result1 = -result1;
+        result2 = -result2;
+    }
+    cout<<result1<<"/"<<result2;
     return 0; 
 }
