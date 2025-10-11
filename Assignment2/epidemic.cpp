@@ -1,5 +1,6 @@
 #include <iostream> 
-#include <limits> 
+#include <cstdlib>
+#include <ctime>
 using namespace std; 
 
 int main() { 
@@ -8,6 +9,8 @@ int main() {
     int days_infected[20][20];
     int initial,x,y,severity;
     double infect_prob,worse_prob; 
+
+    srand(time(0));
     
     do { 
         cout<<"Enter initial infected: ";

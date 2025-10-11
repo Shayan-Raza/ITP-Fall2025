@@ -1,10 +1,14 @@
 #include <iostream>
+#include <iomanip>
 using namespace std; 
 
 int main() { 
-    double w = 0.0, b = 0.0,y,error,a=0.01;
-    int x = 3,target = 14;
+    double w = 0.0, b = 0.0,y,error,a=0.01,target;
+    int x = 3;
+    target  = 2*x*x -4;
     
+    cout << fixed << setprecision(2);
+
     for (int i = 1; i<=1000;i++) { 
         y = w*x + b;
         error = target - y;
