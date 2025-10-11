@@ -10,7 +10,7 @@ int main() {
     int initial,x,y,severity;
     double infect_prob,worse_prob; 
 
-    srand(time(0));
+    srand(time(0)); 
     
     do { 
         cout<<"Enter initial infected: ";
