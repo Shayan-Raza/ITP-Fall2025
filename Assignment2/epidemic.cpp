@@ -63,7 +63,15 @@ int main() {
     cout<<"Initial grid state: "<<endl;
     for (int i = 0; i<20;i++) { 
         for (int j = 0; j<20;j++) { 
-            cout<<grid[i][j]<<" ";
+            if (grid[i][j] == 0) { 
+                cout<<".";
+            } else if (grid[i][j] == -1) { 
+                cout <<"R";
+            } else if (grid[i][j] == 10) { 
+                cout<<"X";
+            } else { 
+                cout<<grid[i][j]<<" ";
+            }
         }
         cout<<endl;
     }
@@ -176,7 +184,15 @@ int main() {
     cout<<"Final grid state: "<<endl;
     for (int i = 0; i<20;i++) { 
         for (int j = 0; j<20;j++) { 
-            cout<<grid[i][j]<<" ";
+            if (grid[i][j] == 0) { 
+                cout<<".";
+            } else if (grid[i][j] == -1) { 
+                cout <<"R";
+            } else if (grid[i][j] == 10) { 
+                cout<<"X";
+            } else { 
+                cout<<grid[i][j]<<" ";
+            }
         }
         cout<<endl;
     }
