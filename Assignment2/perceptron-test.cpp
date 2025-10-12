@@ -7,8 +7,19 @@ int main() {
     int x,target,count=0;
     
     for (int i = 0;i<10;i++) {
-        cout<<"Enter number: ";
-        cin>>x;
+        while (true) {
+            cout << "Enter number: ";
+            cin >> x;
+
+            if (cin.fail()) {
+                cin.clear();      
+                cin.ignore(10000, '\n');
+                cout << "Invalid input. Please enter a number.\n";
+            } 
+            else {
+                break;
+        }
+    }
         for (int i = 1; i<=1000;i++) { 
             target = 2*x*x - 4;
             y = w*x + b;
@@ -16,7 +27,7 @@ int main() {
             w = w + a*error*x;
             b = b+a*error;
         }
-        cout<<"X: "<<x<<"Perceptrons guess: "<<y<<" target value: "<<target<<"  ";
+        cout<<"X: "<<x<<" Perceptrons guess: "<<y<<" target value: "<<target<<"  ";
         if (fabs(y-target)<=1.0) { 
             count = count + 1;
             cout<<"Correct"<<endl;
