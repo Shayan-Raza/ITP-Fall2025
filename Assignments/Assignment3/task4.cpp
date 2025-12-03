@@ -8,7 +8,7 @@ int dx[] = {-1,1,0,0};
 int dy[] = {0,0,-1,1};
 
 bool is_valid_pos(int x, int y, int rows, int cols) { 
-    if (x<=0 || x > rows || y<=0 || y>cols) { 
+    if (x >= 0 && x < rows && y >= 0 && y < cols) { 
         return true;
     } else { 
         return false;
@@ -108,7 +108,7 @@ int main() {
     }
 
     vector<vector<int>> solution_path;
-    char final_maze[MAX_COLS][MAX_ROWS];
+    char final_maze[MAX_ROWS][MAX_COLS];
     for (int i = 0; i<rows;i++) { 
         for (int j = 0; j<cols;j++) { 
             final_maze[i][j] = maze[i][j];
